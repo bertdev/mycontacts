@@ -7,5 +7,12 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
     "nodemon": "^2.0.12"
-  }
+  },
+  "scripts": {
+    "dev": "npx nodemon src/index.js"
+  },
+  "name": "api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT"
 }
