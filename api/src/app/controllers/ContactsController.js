@@ -1,8 +1,8 @@
-const ContactRepository = require('../repositories/ContactRepository');
+const ContactsRepository = require('../repositories/ContactsRepository');
 
-class ContactController {
+class ContactsController {
   async index(require, response) {
-    const contacts = await ContactRepository.findAll();
+    const contacts = await ContactsRepository.findAll();
 
     response.json(contacts);
   }
@@ -10,7 +10,7 @@ class ContactController {
   async show(request, response) {
     const { id } = request.params;
 
-    const contact = await ContactRepository.findById(id);
+    const contact = await ContactsRepository.findById(id);
 
     if (!contact) {
       return response.status(404).json({ error: 'User not found' });
@@ -28,12 +28,12 @@ class ContactController {
       response.status(400).json('Name is required');
     }
 
-    const ContactExists = await ContactRepository.findByEmail(email);
+    const ContactExists = await ContactsRepository.findByEmail(email);
     if (ContactExists) {
       response.status(400).json('This e-mail is alredy in use');
     }
 
-    const contact = await ContactRepository.create({
+    const contact = await ContactsRepository.create({
       name, email, phone, category_id,
     });
 
@@ -46,7 +46,7 @@ class ContactController {
       name, email, phone, category_id,
     } = request.body;
 
-    const contactExists = await ContactRepository.findById(id);
+    const contactExists = await ContactsRepository.findById(id);
     if (!contactExists) {
       return response.status(404).json({ error: 'User not found' });
     }
@@ -55,12 +55,12 @@ class ContactController {
       return response.status(400).json({ error: 'Name is required' });
     }
 
-    const contactByEmail = await ContactRepository.findByEmail(email);
+    const contactByEmail = await ContactsRepository.findByEmail(email);
     if (contactByEmail && contactByEmail.id !== id) {
       return response.status(400).json({ error: 'This e-mail is already in use' });
     }
 
-    const contact = await ContactRepository.update({
+    const contact = await ContactsRepository.update({
       id, name, email, phone, category_id,
     });
 
@@ -70,16 +70,16 @@ class ContactController {
   async delete(request, response) {
     const { id } = request.params;
 
-    const contact = await ContactRepository.findById(id);
+    const contact = await ContactsRepository.findById(id);
     if (!contact) {
       return response.status(404).json({ error: 'User not found' });
     }
 
-    await ContactRepository.delete(id);
+    await ContactsRepository.delete(id);
 
     // 204: sucess and no content
     response.json(204);
   }
 }
 
-module.exports = new ContactController();
+module.exports = new ContactsController();

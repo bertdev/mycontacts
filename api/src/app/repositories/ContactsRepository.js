@@ -17,7 +17,7 @@ let contacts = [
   },
 ];
 
-class ContactRepository {
+class ContactsRepository {
   findAll() {
     return new Promise((resolve) => resolve(contacts));
   }
@@ -81,4 +81,4 @@ class ContactRepository {
   }
 }
 
-module.exports = new ContactRepository();
+module.exports = new ContactsRepository();
