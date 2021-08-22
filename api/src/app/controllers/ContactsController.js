@@ -72,7 +72,7 @@ class ContactsController {
     await ContactsRepository.delete(id);
 
     // 204: sucess and no content
-    response.json(204);
+    response.sendStatus(204);
   }
 }
 
