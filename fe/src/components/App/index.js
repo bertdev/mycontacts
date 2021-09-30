@@ -8,7 +8,6 @@ import { Container } from './styles';
 
 import Header from '../Header';
 import Routes from '../../Routes';
-// import ContactsList from '../ContactsList';
 
 function App() {
   return (
