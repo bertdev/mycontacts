@@ -11,6 +11,7 @@ import trash from '../../assets/images/icons/trash.svg';
 export default function Home() {
   return (
     <Container>
+
       <InputSearchContainer>
         <input type="text" placeholder="Pesquisar contato..." />
       </InputSearchContainer>
@@ -34,7 +35,7 @@ export default function Home() {
               <strong>Herbert</strong>
               <small>Instagram</small>
             </div>
-            <span>herbert@seila.com</span>
+            <span>herbert @seila.com</span>
             <span>(86)99999999</span>
           </div>
 
