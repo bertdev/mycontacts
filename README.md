@@ -1,5 +1,7 @@
 <h1 align="center">My contacts 📚</h1> 
 
+> Status: em desenvolvimento ⚠️
+
 Projeto proposto no curso Jstack.
 
 Esse projeto visa desenvolver um projeto completo com front-end, back-end e mobile.
@@ -41,7 +43,7 @@ A api é desenvolvida em node + express, fazendo o contato com um banco de dados
 
 ## Front-end
 
-![screenshot]()
+![screenshot](https://raw.githubusercontent.com/bertdev/mycontacts/main/demo-front.png)
 
 O front-end é desenvolvido com react + styled components, utilizando componentes funcionais com hooks e PropTypes para tipar as props. O projeto foi iniciado usando CRA. 
 
