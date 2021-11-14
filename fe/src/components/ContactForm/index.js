@@ -51,14 +51,8 @@ export default function ContactForm({ buttonLabel }) {
     setPhone(formatPhone(event.target.value));
   }
 
-  console.log(errors);
-
   function handleSubmit(event) {
     event.preventDefault();
-
-    console.log({
-      name, email, phone, category,
-    });
   }
 
   return (
@@ -87,6 +81,7 @@ export default function ContactForm({ buttonLabel }) {
         <Input
           value={phone}
           maxLength="15"
+          type="tel"
           placeholder="Telefone"
           onChange={handlePhone}
         />
