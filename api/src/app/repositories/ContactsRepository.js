@@ -2,7 +2,7 @@ const db = require('../database');
 
 class ContactsRepository {
   async findAll(orderBy = 'ASC') {
-    const direction = orderBy.toUpperCase === 'DESC' ? 'DESC' : 'ASC';
+    const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
     const rows = await db.query(`
       SELECT contacts.*, categories.name as category_name
       FROM contacts
