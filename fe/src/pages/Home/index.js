@@ -59,7 +59,7 @@ export default function Home() {
     <Container>
 
       {isLoading && (
-        <Loader />
+        <Loader isLoading={isLoading} />
       )}
 
       <InputSearchContainer>
