@@ -38,7 +38,7 @@ class ContactsController {
       name, email, phone, category_id,
     });
 
-    response.json(contact);
+    response.satatus(201).json(contact);
   }
 
   async update(request, response) {
