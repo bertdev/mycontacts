@@ -1,14 +1,12 @@
-/* eslint-disable class-methods-use-this */
-import delay from '../utils/delay';
+import HttpClient from './utils/HttpClient';
 
 class ContactsService {
+  constructor() {
+    this.HttpClient = new HttpClient('http://localhost:3001/contacts');
+  }
+
   async listContacts(orderBy = 'asc') {
-    const response = await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`);
-
-    await delay();
-
-    const json = await response.json();
-    return json;
+    return this.HttpClient.get(`?orderBy=${orderBy}`);
   }
 }
 
